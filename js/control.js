@@ -2,6 +2,11 @@ const form = document.getElementById('formulario');
 const usuario = document.getElementById('usuario');
 const clave = document.getElementById('clave');
 
+function validarUsuarioVacio()
+{
+    return usuario.value != '' ; 
+}
+
 function validarUsuario()
 {
     return usuario.value.indexOf('@') != -1 ; 
@@ -15,17 +20,25 @@ function validarClave()
 function validarFormulario()
 {
     e = window.event; //Se captura el evento 
-    if( validarUsuario() )
+    if( validarUsuarioVacio() )
     {
-        if( validarClave() == false )
+        if( validarUsuario() )
         {
-            alert("El campo clave esta vacio.");
+            if( validarClave() == false )
+            {
+                alert("El campo de clave esta vacio.");
+                e.preventDefault();
+            }
+        }
+        else
+        {
+            alert("El campo de usuario debe llevar \'@\' .");
             e.preventDefault();
         }
     }
     else
     {
-        alert("El campo usuario debe llevar \'@\' .");
+        alert("El campo de usuario esta vacio.");
         e.preventDefault();
     }
 }
