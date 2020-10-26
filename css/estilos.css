@@ -1,0 +1,24 @@
+.centrado
+{
+    display: grid;
+    place-items: center;
+}
+h4
+{
+    margin: 8px;
+}
+.campo
+{
+    padding: 5px;
+}
+.caja
+{
+    width: 40%;
+    margin: auto;
+    border: midnightblue solid;
+    background-color: #F4F0EC;
+}
+#btnenviar
+{
+    margin: 10px;
+}
